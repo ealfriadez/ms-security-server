@@ -3,16 +3,17 @@ server:
 spring:
   application:
     name: ms-security-server
-#  datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    password: '123456'
-#    url: jdbc:mysql://db-mysql-security:3306/db_segurity?serverTimezone=America/Lima&allowPublicKeyRetrieval=true&useSSL=false
-#    username: root
   datasource:
-    driver-class-name: org.h2.Driver
-    password: ''
-    url: jdbc:h2:mem:ms-security-server
-    username: sa
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: '123456'
+    url: jdbc:mysql://db-mysql-security:3306/db_segurity?serverTimezone=America/Lima&allowPublicKeyRetrieval=true&useSSL=false
+#    url: jdbc:mysql://localhost:3306/db_segurity?serverTimezone=America/Lima&allowPublicKeyRetrieval=true&useSSL=false
+    username: root
+#  datasource:
+#    driver-class-name: org.h2.Driver
+#    password: ''
+#    url: jdbc:h2:mem:ms-security-server
+#    username: sa
 #  h2:
 #    console:
 #      enabled: true
@@ -31,8 +32,8 @@ eureka:
   client:
     enabled: true
     service-url:
-      defaultZone: http://localhost:8761/eureka
-#      defaultZone: http://ms-discovery-server:8761/eureka
+      defaultZone: http://ms-discovery-server:8761/eureka
+#      defaultZone: http://localhost:8761/eureka
 jwt:
   key: jwtKey#SuperSecret$JavaMicroservices#JUN22
   expirationTimeMinutes: 5
